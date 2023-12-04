@@ -432,26 +432,9 @@ export default function Header() {
 			rating: 4,
 		},
 	]);
-	// const [showSidebar, setShowSidebar] = useState(false);
-
-	// const toggleSidebar = () => {
-	// 	const sidebar = document.getElementById("sidebar");
-
-	// 	if (sidebar) {
-	// 		if (showSidebar) {
-	// 			document.body.style.overflowY = "auto";
-	// 			sidebar.classList.remove("sidebar-active");
-	// 			setShowSidebar(false);
-	// 		} else {
-	// 			document.body.style.overflowY = "hidden";
-	// 			sidebar.classList.add("sidebar-active");
-	// 			setShowSidebar(true);
-	// 		}
-	// 	}
-	// };
 
 	useEffect(() => {
-		function animatedHeader() {
+		function animatedHeader(this: any) {
 			const windowWidth = window.innerWidth;
 
 			const header = document.getElementById("header");

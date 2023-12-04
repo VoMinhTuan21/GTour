@@ -1,0 +1,240 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.header-wrap {
+	position: fixed;
+	z-index: 10;
+	background-color: transparent;
+	transition: all 0.5s ease;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.header {
+	padding-left: 30px;
+	padding-right: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 64px;
+	color: $white !important;
+
+	box-sizing: border-box;
+	transition: all 0.5s ease;
+
+	@include responsive(md) {
+		height: 74px;
+	}
+
+	@include responsive(lg) {
+		padding-left: 62px;
+		padding-right: 62px;
+	}
+
+	@include responsive(xl) {
+		padding-left: 90px;
+		padding-right: 90px;
+		max-width: 1425px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&-active {
+		background-color: $white !important;
+		ul,
+		li,
+		.icons {
+			color: $black-2 !important;
+		}
+		border-bottom: 1px solid $gray-2;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	&-deactive {
+		@include responsive(lg) {
+			opacity: 0;
+			transform: translateY(-100%);
+		}
+	}
+
+	.logo {
+		width: 92px;
+		height: 30px;
+		position: relative;
+
+		@include responsive(md) {
+			margin-left: 30px;
+		}
+
+		@include responsive(lg) {
+			margin-left: 0;
+		}
+	}
+
+	.icons {
+		& > * + * {
+			margin-left: 20px;
+		}
+
+		& a:first-child {
+			font-size: $body-2;
+			display: inline-block;
+		}
+
+		@include responsive(lg) {
+			display: flex;
+			align-items: center;
+			& > * + * {
+				margin-left: 10px;
+			}
+		}
+
+		@include responsive(xl) {
+			& > * + * {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.cart {
+		position: relative;
+		display: inline;
+
+		&-count {
+			background-color: $red-1;
+			border-radius: 50%;
+			width: 16px;
+			height: 16px;
+			font-weight: 600;
+			line-height: 18px;
+			font-size: $body-4;
+			color: $white;
+			text-align: center;
+			position: absolute;
+			top: -8px;
+			right: -8px;
+		}
+	}
+
+	&-menu {
+		display: flex;
+
+		.navigation {
+			display: none;
+
+			@include responsive(lg) {
+				display: flex;
+			}
+		}
+	}
+}
+
+.menu-sidebar {
+	width: 270px;
+	box-sizing: border-box;
+	background-color: rgba(255, 255, 255, 0.85);
+	padding: 35px 40px;
+
+	@include responsive(md) {
+		width: 360px;
+	}
+
+	.memu-wrap {
+		position: relative;
+	}
+
+	.menu-close {
+		background-color: $red-1;
+		color: $white;
+		width: 44px;
+		height: 44px;
+		font-size: $heading-5;
+		line-height: 42px;
+		border-radius: 250px;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		border: none;
+		outline: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.15);
+		animation-delay: 1.5s;
+
+		&:hover {
+			margin-top: -4px;
+		}
+	}
+
+	.menu {
+		margin-top: 60px;
+		margin-bottom: 60px;
+
+		@include responsive(md) {
+			margin-bottom: 40px;
+		}
+
+		li {
+			color: $black-2;
+			font-size: $heading-2;
+			font-weight: bold;
+			line-height: 2em;
+			cursor: pointer;
+			transition: all 0.2s linear;
+
+			&:hover {
+				color: $red-1;
+			}
+		}
+	}
+
+	.tours {
+		margin-top: 20px;
+		& > * + * {
+			margin-top: 20px;
+		}
+
+		@include responsive(md) {
+			margin-top: 0;
+			padding-top: 20px;
+		}
+
+		@include responsive(lg) {
+			padding-top: 40px;
+		}
+	}
+
+	.social {
+		margin-top: 55px;
+		font-size: $heading-2 !important;
+
+		@include responsive(md) {
+			margin-top: 50px;
+		}
+
+		@include responsive(lg) {
+			margin-top: 40px;
+		}
+
+		span {
+			font-size: 20px;
+			line-height: 3;
+		}
+
+		& > * + * {
+			margin-left: 15px;
+		}
+
+		.icon {
+			cursor: pointer;
+			transition: all 0.2s linear;
+
+			&:hover {
+				color: $red-1;
+			}
+		}
+	}
+}

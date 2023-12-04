@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.container {
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	background-color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	.title {
+		font-size: $heading-2;
+		line-height: 32px;
+		font-weight: bold;
+		padding-top: 10px;
+
+		@include responsive(md) {
+			font-size: $heading-1;
+			line-height: 46px;
+			padding-top: 0;
+		}
+	}
+
+	.subTitle {
+		font-size: $body-1;
+		font-weight: 500;
+		line-height: 25.5px;
+		color: $gray-4;
+	}
+}

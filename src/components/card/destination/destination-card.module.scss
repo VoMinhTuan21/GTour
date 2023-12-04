@@ -1,0 +1,60 @@
+@import "../../../styles/mixin.scss";
+@import "../../../styles/variables.scss";
+
+.container {
+	width: 100%;
+	position: relative;
+	height: 300px;
+	border-radius: 5px;
+	overflow: hidden;
+	transition-duration: 0.2s;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 22px 40px rgba(0, 0, 0, 0.15);
+		transform: translateY(-4px);
+	}
+
+	@include responsive(md) {
+		height: 180px;
+	}
+
+	@include responsive(lg) {
+		height: 300px;
+	}
+
+	&::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0px;
+		z-index: 1;
+		top: 0;
+		content: "";
+		border-radius: 5px;
+		background-image: linear-gradient(
+			transparent 0%,
+			transparent 60%,
+			rgba(0, 0, 0, 0.1) 66%,
+			rgba(0, 0, 0, 0.5) 93%,
+			rgba(0, 0, 0, 0.49) 100%
+		);
+	}
+
+	.title {
+		position: absolute;
+		left: 0;
+		bottom: -5px;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 5px 15px 15px 15px;
+		z-index: 2;
+
+		h3 {
+			font-size: $heading-2;
+			font-weight: bold;
+			color: $white;
+			line-height: 33px;
+		}
+	}
+}

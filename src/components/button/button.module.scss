@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+.fill {
+	background-color: $red-1;
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 9px 22px;
+	color: $white;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	font-size: $body-1;
+	line-height: 22px;
+	transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+
+	&:hover {
+		background-color: $cyan-2;
+	}
+}
+
+.outline {
+	background-color: transparent;
+	border: 2px solid $white;
+	border-radius: 5px;
+	padding: 0.6em 1.5em 0.6em 1.5em;
+	font-size: $body-3;
+	transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+	line-height: 1.5;
+	color: $white;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $white;
+		color: $black-2;
+	}
+}

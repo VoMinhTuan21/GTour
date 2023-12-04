@@ -1,0 +1,215 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.container {
+	background-color: $black-2;
+	color: $gray-3;
+
+	.footer {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		box-sizing: border-box;
+
+		@include responsive(md) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+
+		@include responsive(lg) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+
+		.list {
+			padding-left: 30px;
+			padding-right: 30px;
+			box-sizing: border-box;
+
+			& > * + * {
+				margin-top: 20px;
+			}
+
+			@include responsive(md) {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 3%;
+
+				& > li {
+					margin-top: 0px;
+				}
+			}
+
+			@include responsive(lg) {
+				padding-left: 32px;
+				padding-right: 32px;
+			}
+
+			@include responsive(xl) {
+				padding-left: 90px;
+				padding-right: 90px;
+				max-width: 1425px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+
+		.title {
+			color: $white;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: $heading-4;
+			font-weight: bold;
+			line-height: 1.2em;
+		}
+
+		.awards-description {
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			font-size: $body-1;
+			line-height: 1.7;
+		}
+
+		.awards-image {
+			margin-top: 30px;
+			width: 246px;
+			aspect-ratio: 246/113;
+			position: relative;
+
+			@include responsive(md) {
+				max-width: 90%;
+			}
+		}
+
+		.info-contact {
+			p {
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+				font-size: $body-1;
+				line-height: 1.7;
+
+				span {
+					margin-right: 10px;
+				}
+			}
+
+			.social {
+				margin-top: 20px;
+				margin-bottom: 10px;
+
+				ul {
+					display: flex;
+					justify-content: center;
+					gap: 10px;
+					flex-wrap: wrap;
+
+					@include responsive(md) {
+						justify-content: flex-start;
+					}
+				}
+
+				a {
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					text-align: center;
+					border-radius: 250px;
+					display: block;
+				}
+
+				.facebook {
+					background-color: $blue-2;
+				}
+
+				.twitter {
+					background-color: $cyan-1;
+				}
+
+				.youtube {
+					background-color: $red-2;
+				}
+
+				.pinterest {
+					background-color: $red-3;
+				}
+
+				.instagram {
+					background-color: $blue-1;
+				}
+			}
+		}
+
+		.image-gallery {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5% 2%;
+			padding-top: 10px;
+
+			a {
+				width: 100%;
+				aspect-ratio: 1/1;
+				position: relative;
+				border-radius: 5px;
+				overflow: hidden;
+
+				image {
+					width: 100%;
+					height: 100%;
+					object-position: center;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	.footer-bar {
+		border-top: 1px solid $black-1;
+		padding: 20px 30px 10px 30px;
+		box-sizing: border-box;
+
+		@include responsive(md) {
+			padding-left: 0;
+			padding-right: 0;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row-reverse;
+		}
+
+		@include responsive(lg) {
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-right: 32px;
+			margin-left: 32px;
+		}
+
+		@include responsive(xl) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1425px;
+			padding-left: 90px;
+			padding-right: 90px;
+			padding-top: 30px;
+			padding-bottom: 20px;
+		}
+
+		.menu {
+			color: $gray-3 !important;
+			font-size: $body-3;
+			font-weight: 400;
+			line-height: 1.7;
+			display: flex;
+			margin-bottom: 10px;
+
+			& > * + * {
+				margin-left: 20px;
+			}
+		}
+
+		.copyright {
+			color: $gray-3;
+			font-size: $body-3;
+			font-weight: 400;
+			line-height: 1.7;
+		}
+	}
+}

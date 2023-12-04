@@ -1,0 +1,37 @@
+@import "../../../styles/variables.scss";
+
+.container {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 370/205;
+	cursor: pointer;
+
+	&:hover {
+		.demo-hover {
+			opacity: 1;
+		}
+	}
+
+	.demo-hover {
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.5);
+		transition: opacity 0.4s ease-in-out;
+		.title {
+			font-size: $body-3;
+			line-height: 20px;
+			color: $white;
+			margin-top: 10px;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+	}
+}

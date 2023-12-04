@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.container {
+	background-color: $white;
+	border-radius: 5px;
+	border: 1px solid $gray-2;
+	text-align: center;
+
+	select {
+		width: calc(100% - 30px);
+		background-color: $white;
+		padding: 10px 20px 10px 10px;
+		box-sizing: border-box;
+		outline: none;
+		border: none;
+		color: $brown;
+		font-size: 15px;
+		font-weight: 400px;
+		appearance: none;
+	}
+
+	span {
+		color: $black-2;
+		opacity: 0.5;
+		font-size: $body-1;
+	}
+}
